@@ -1,5 +1,11 @@
 <!-- resources/views/auth/login.blade.php -->
 
+@extends('layout.main')
+
+@section('content')
+
+Login:<br>
+
 <form method="POST" action="/auth/login">
     {!! csrf_field() !!}
 
@@ -21,3 +27,9 @@
         <button type="submit">Login</button>
     </div>
 </form>
+
+
+Username: <input id="username"><br>
+Password: <input id="password">
+
+@stop
