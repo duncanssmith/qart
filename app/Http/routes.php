@@ -11,13 +11,23 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
-Route::get('/home', function () {
-    return view('welcome');
-});
+//Route::get('/home', function () {
+//    return view('welcome');
+//});
+//
+# Secure page
+Route::get('/', ['as' => 'home', 'uses' => 'PagesController@home']);
+
+// Home and public pages
+Route::get('/', ['as' => 'public',  'uses' => 'PagesController@home']);
+Route::get('/page/{id}', ['as' => 'public',  'uses' => 'PagesController@pagegroup']);
+Route::get('/pagework/{id}', ['as' => 'public',  'uses' => 'PagesController@pagework']);
+Route::get('/pagetexts', ['as' => 'pagetexts',  'uses' => 'PagesController@pagetexts']);
+Route::get('/pagetext/{id}', ['as' => 'pagetext',  'uses' => 'PagesController@pagetext']);
 
     // Authentication routes...
     Route::get('auth/login', 'Auth\AuthController@getLogin');
