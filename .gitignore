@@ -3,3 +3,6 @@
 Homestead.yaml
 Homestead.json
 .env
+.env.local.php
+public/media/js/vendor
+
