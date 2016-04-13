@@ -4,7 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Group;
 use App\Models\Text;
-use Illuminate\View\View;
+use Illuminate\Support\Facades\View;
+use Auth;
+use DB;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Http\Request;
 
 class PagesController extends Controller {
 
@@ -27,9 +31,9 @@ class PagesController extends Controller {
         $groups = Group::all();
         $texts = Text::all();
         $body_class = 'top-photo';
-
         // show the view and pass the group to it
-        return View::make('pages.home')
+        // return View::make('pages.home')
+        return view('pages.home')
             ->with('groups', $groups)
             ->with('texts', $texts)
             ->with('body_class', $body_class)

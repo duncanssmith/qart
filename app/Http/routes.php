@@ -20,7 +20,7 @@
 //});
 //
 # Secure page
-Route::get('/', ['as' => 'home', 'uses' => 'PagesController@home']);
+//Route::get('/', ['as' => 'home', 'uses' => 'PagesController@home']);
 
 // Home and public pages
 Route::get('/', ['as' => 'public',  'uses' => 'PagesController@home']);
